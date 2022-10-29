@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
+    
 }
 
 body{
@@ -13,12 +14,7 @@ body{
     background: linear-gradient(to right, #8f94fb, #4e54c8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
     /*solucion a pie de pagina abajo*/
-    position: relative;
-    padding-bottom: 3em;
-    min-height: 100vh;
-
    
-
 }
 
 /*Pie de pagina*/
@@ -27,9 +23,6 @@ body{
     background-color: #0a141d;
 
     /*solucion a pie de pagina abajo*/
-    position: absolute;
-    bottom: 0;
-
    
 }
 
@@ -100,3 +93,17 @@ body{
         padding: 40px 0px;
     }
 }
+
+
+/* FORMULARIO */
+
+.form-signin .gru1{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 50px;
+    padding: 10px 0px;
+}
+

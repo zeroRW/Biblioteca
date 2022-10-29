@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [controLibreria::class, 'welcome']);
 Route::get('index',[controLibreria::class, 'principal'])->name('Inicio');
+Route::get('formulario',[controLibreria::class, 'registro'])->name('form');
+
+Route::post('guardarLibro', [controLibreria::class, 'procesoLibro'])->name('re');

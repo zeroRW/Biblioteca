@@ -13,7 +13,7 @@ class validadorLibreria extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,12 @@ class validadorLibreria extends FormRequest
     public function rules()
     {
         return [
-            //
+            'Titulo'=>'required',
+            'isbn'=>'required|min:13',
+            'Paginas'=>'required',
+            'Autor'=>'required',
+            'Edit'=>'required',
+            'Email'=>'required|email'
         ];
     }
 }
