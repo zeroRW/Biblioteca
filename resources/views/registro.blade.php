@@ -1,6 +1,15 @@
 @extends('template')
 @section('codigo')
     
+@if (session()->has('correcto'))
+    {!!
+        "<script>
+
+        </script>"
+    !!}
+@endif
+
+
 <div class="container w-50 mt-5 rounded shadow">
     <div class="row align-items-stretch">
       <div class="bg-white p-5 rounded">
@@ -21,7 +30,7 @@
 
             <div class="mb-3">
                 <label for="text" class="form-label">Titulo</label>
-                <input type="text" class="form-control" name="Titulo" value="{{old('Titulo')}}">
+                <input id="nombre" type="text" class="form-control" name="Titulo" value="{{old('Titulo')}}">
                 <p class="fst-italic" style="color: red">
                     {{$errors->first('Titulo')}}
                 </p>
@@ -69,7 +78,7 @@
             
                      
               <div class="d-grid">
-                <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
+                <button type="submit" class="btn btn-primary">Registrar</button>
               </div>
           </form>
   
