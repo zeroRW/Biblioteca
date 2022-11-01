@@ -47,7 +47,13 @@
         <div class="box">
           <h3>Sobre nosotros</h3>
           <p>Somos una biblioteca de libros en linea.</p>
-          <p>29/10/2022</p>
+          <p>
+          <?php
+          date_default_timezone_set('America/Mexico_City');
+          $fecha = date('d/m/y h:i:s');
+          echo "$fecha";
+          ?>
+          </p>
         </div>
         <div class="box">
           <h3>Siguenos en</h3>

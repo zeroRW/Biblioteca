@@ -1,13 +1,25 @@
 @extends('template')
 @section('codigo')
-    
+
+
 @if (session()->has('correcto'))
     {!!
-        "<script>
-
+        "<script>          
+            Swal.fire(
+            'Registro correcto',
+            '<?php 
+            if(isset($_POST['Titulo'])){
+                $valor = $_POST['Titulo'];
+                echo $valor;    
+            }
+            ?>',
+            'success'
+            )
         </script>"
     !!}
 @endif
+
+
 
 
 <div class="container w-50 mt-5 rounded shadow">
@@ -30,7 +42,7 @@
 
             <div class="mb-3">
                 <label for="text" class="form-label">Titulo</label>
-                <input id="nombre" type="text" class="form-control" name="Titulo" value="{{old('Titulo')}}">
+                <input type="text" class="form-control" name="Titulo" value="{{old('Titulo')}}">
                 <p class="fst-italic" style="color: red">
                     {{$errors->first('Titulo')}}
                 </p>
