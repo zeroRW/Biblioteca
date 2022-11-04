@@ -3,20 +3,15 @@
 
 
 @if (session()->has('correcto'))
-    {!!
-        "<script>          
-            Swal.fire(
-            'Registro correcto',
-            '<?php 
-            if(isset($_POST['Titulo'])){
-                $valor = $_POST['Titulo'];
-                echo $valor;    
-            }
-            ?>',
-            'success'
-            )
-        </script>"
-    !!}
+    
+        <script type="text/javascript">          
+            Swal.fire({
+            icon: 'success',
+            title: 'Libro guardado correctamente:',
+            text: '{{session('ti')}}',
+            })
+        </script>
+    
 @endif
 
 

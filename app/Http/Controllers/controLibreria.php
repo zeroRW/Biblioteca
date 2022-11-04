@@ -9,7 +9,14 @@ class controLibreria extends Controller
 {
     public function procesoLibro(validadorLibreria $req){
 
-        return redirect('formulario')->with('correcto','incorrecto');
+        if ($req -> isMethod('POST')){
+            $t = $req -> input('Titulo');
+
+            session() -> flash('ti', $t);
+
+            return redirect('formulario')->with('correcto','incorrecto');
+        }
+
 
     }
 
