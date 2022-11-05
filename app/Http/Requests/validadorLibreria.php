@@ -25,7 +25,7 @@ class validadorLibreria extends FormRequest
     {
         return [
             'Titulo'=>'required',
-            'isbn'=>'required|min:13',
+            'isbn'=>'required|min:13|max:13',
             'Paginas'=>'required',
             'Autor'=>'required',
             'Edit'=>'required',
