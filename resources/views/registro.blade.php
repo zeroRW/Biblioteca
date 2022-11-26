@@ -2,8 +2,7 @@
 @section('codigo')
 
 
-@if (session()->has('correcto'))
-    
+@if (session()->has('correcto')) 
         <script type="text/javascript">          
             Swal.fire({
                 position: 'top-center',
@@ -13,10 +12,7 @@
                 showConfirmButton: false,
                 timer: 1600
             })
-        </script>
-
-
-    
+        </script> 
 @endif
 
 

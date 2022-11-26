@@ -28,7 +28,7 @@
                 <a class="nav-link" style="color: white" href="{{route('libro.create')}}">Registrar Libro</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" style="color: white" href="">Autores</a>
+                <a class="nav-link" style="color: white" href="{{route('autor.createA')}}">Autores</a>
               </li>
             </ul>
                 <a href="/">

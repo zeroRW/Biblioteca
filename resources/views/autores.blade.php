@@ -1,12 +1,17 @@
 @extends('template')
 @section('codigo')
 
-
-@if (session()->has('hecho'))
-<div class="alert alert-warning alert-dismissible fade show" role="alert">
-    <strong>El Autor: {{session('ti')}} </strong> Guardado exitosament
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  </div>
+@if (session()->has('hecho')) 
+        <script type="text/javascript">          
+            Swal.fire({
+                position: 'top-center',
+                icon: 'success',
+                title: 'Se guardo con exito el autor:',
+                text: '{{session('ti')}}',
+                showConfirmButton: false,
+                timer: 1600
+            })
+        </script> 
 @endif
 
 
@@ -25,7 +30,7 @@
             @endif 
           
   
-          <form class="form-signin" action="guardarAutor" method="POST">
+          <form class="form-signin" action="{{route('autor.store2')}}" method="POST">
 
             @csrf
 

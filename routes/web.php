@@ -30,3 +30,8 @@ Route::get('index',[controLibreria::class, 'principal'])->name('Inicio');
 Route::get('libro/create',[controladorBD::class, 'create'])->name('libro.create');
 
 Route::post('libro', [controladorBD::class, 'store'])->name('libro.store');
+
+//RUTAS REGISTRAR AUTOR
+Route::get('autor/createA',[controladorBD::class, 'createA'])->name('autor.createA');
+
+Route::post('autor', [controladorBD::class, 'store2'])->name('autor.store2');
