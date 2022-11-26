@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/3145/3145765.png">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @vite(['resources/css/app.css'])
+
 </head>
 <body>
 
@@ -25,6 +26,9 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" style="color: white" href="{{route('form')}}">Registrar Libro</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="color: white" href="{{route('AU')}}">Autores</a>
               </li>
             </ul>
                 <a href="/">
