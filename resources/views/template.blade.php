@@ -25,10 +25,10 @@
                 <a class="nav-link active" style="color: white" href="{{route('Inicio')}}">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" style="color: white" href="{{route('form')}}">Registrar Libro</a>
+                <a class="nav-link" style="color: white" href="{{route('libro.create')}}">Registrar Libro</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" style="color: white" href="{{route('AU')}}">Autores</a>
+                <a class="nav-link" style="color: white" href="">Autores</a>
               </li>
             </ul>
                 <a href="/">

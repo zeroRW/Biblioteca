@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\controladorBD;
 use App\Http\Controllers\controLibreria;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,12 +18,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [controLibreria::class, 'welcome']);
 Route::get('index',[controLibreria::class, 'principal'])->name('Inicio');
-Route::get('formulario',[controLibreria::class, 'registro'])->name('form');
-Route::get('auto', [controLibreria::class, 'aautores'])->name('AU');
 
-Route::post('guardarLibro', [controLibreria::class, 'procesoLibro'])->name('re');
+//Route::get('formulario',[controLibreria::class, 'registro'])->name('form');
+//Route::get('auto', [controLibreria::class, 'aautores'])->name('AU');
 
-Route::post('guardarAutor', [controLibreria::class, 'procesoAutores'])->name('autor');
+//Route::post('guardarLibro', [controLibreria::class, 'procesoLibro'])->name('re');
+
+//Route::post('guardarAutor', [controLibreria::class, 'procesoAutores'])->name('autor');
 
 //RUTAS REGISTRAR LIBRO
+Route::get('libro/create',[controladorBD::class, 'create'])->name('libro.create');
 
+Route::post('libro', [controladorBD::class, 'store'])->name('libro.store');

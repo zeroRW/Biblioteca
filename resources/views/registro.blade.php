@@ -31,7 +31,7 @@
 
           
   
-          <form class="form-signin" action="guardarLibro" method="POST">
+          <form class="form-signin" action="{{route('libro.store')}}" method="POST">
 
             @csrf
 
