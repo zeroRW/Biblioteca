@@ -6,11 +6,16 @@
     
         <script type="text/javascript">          
             Swal.fire({
-            icon: 'success',
-            title: 'Libro guardado correctamente:',
-            text: '{{session('ti')}}',
+                position: 'top-center',
+                icon: 'success',
+                title: 'Se guardo con exito el libro:',
+                text: '{{session('ti')}}',
+                showConfirmButton: false,
+                timer: 1600
             })
         </script>
+
+
     
 @endif
 
