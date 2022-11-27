@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\validadorAutores;
 use App\Http\Requests\validadorLibreria;
+use App\Models\tb_autores;
 use Illuminate\Http\Request;
 use DB;
 use Carbon\Carbon;
@@ -19,7 +20,8 @@ class controladorBD extends Controller
 
     public function create()
     {
-        return view('registro');
+        $categorias = tb_autores::all();
+        return view('registro', compact('categorias'));
     }
 
     public function createA()
@@ -34,13 +36,14 @@ class controladorBD extends Controller
             "titulo"=> $req->input('Titulo'),
             "ISBN"=> $req->input('isbn'),
             "paginas"=> $req->input('Paginas'),
-            "autor"=> $req->input('Autor'),
+            "autor_id"=> $req->input('Autor'),
             "editorial"=> $req->input('Edit'),
             "email"=> $req->input('Email'),
             "created_at"=> Carbon::now(),
             "updated_at"=> Carbon::now(),
         ]
         );
+        
 
         if ($req -> isMethod('POST')){
             $t = $req -> input('Titulo');
@@ -76,7 +79,7 @@ class controladorBD extends Controller
 
     public function show($id)
     {
-        
+    
     }
 
 

@@ -62,7 +62,14 @@
 
                 <div class="mb-4">
                     <label for="text" class="form-label">Autor</label>
-                    <input type="text" class="form-control" name="Autor" value="{{old('Autor')}}">
+                    <select class="form-select" name="Autor" aria-label="Default select example">
+                        <option selected>Selecciona una opcion...</option>
+                        
+                        @foreach ($categorias as $tb_autores)
+                            <option value="{{$tb_autores['idAutores']}}">{{$tb_autores['nombre']}}</option>
+                        @endforeach
+
+                      </select>
                     <p class="fst-italic" style="color: red">
                         {{$errors->first('Autor')}}
                     </p>
