@@ -86,11 +86,6 @@ class controladorBD extends Controller
 
     }
 
-    public function store3()
-    {
-        
-    }
-
     public function show($id)
     {
     
@@ -103,15 +98,42 @@ class controladorBD extends Controller
         return view('editarLibro', compact('consultaID'));
     }
 
-
-    public function update(Request $request, $id)
-    {
-        //
+    public function edit2($id){
+        $consultaIDD = DB::table('tb_autores')->where('idAutores', $id)->first();
+        return view('editarAutor', compact('consultaIDD'));
     }
 
 
+    public function update(Request $request, $id)
+    {
+        
+    }
+
+    public function update2(validadorAutores $req, $id)
+    {
+        DB::table('tb_autores')->where('idAutores', $id)->update([
+
+            "nombre"=> $req->input('name'),
+            "fechaNacimiento"=> $req->input('fechaNacimiento'),
+            "librosPublicados"=> $req->input('libros'),
+            "updated_at"=> Carbon::now(),
+
+        ]);
+
+        return redirect('consulAu')->with('actualizar', 'abc');
+    }
+
+    public function eliminar($id)
+    {
+        $consultaEL = DB::table('tb_autores')->where('idAutores', $id)->first();
+
+        return view('eliminarAutor', compact('consultaEL'));
+    }
+
     public function destroy($id)
     {
-        //
+        DB::table('tb_autores')->where('idAutores', $id)->delete();
+
+        return redirect('consulAu')->with('eliminado', 'cba');
     }
 }

@@ -43,3 +43,11 @@ Route::post('autor', [controladorBD::class, 'store2'])->name('autor.store2');
 
 Route::get('consulAu', [controladorBD::class, 'index2'])->name('consulau.index2');
 
+//RUTAS CONSULTAR AUTOR
+Route::get('autor/{id}/edit2', [controladorBD::class, 'edit2'])->name('autor.edit2');
+
+Route::put('autor/{id}', [controladorBD::class, 'update2'])->name('autor.update2');
+
+Route::get('autor/{id}/eliminar', [controladorBD::class, 'eliminar'])->name('autor.eliminar');
+
+Route::delete('autor/{id}', [controladorBD::class, 'destroy'])->name('autor.destroy');
