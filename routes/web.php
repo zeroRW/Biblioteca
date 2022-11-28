@@ -36,6 +36,12 @@ Route::get('consulLi', [controladorBD::class, 'index'])->name('consuli.index');
 //RUTAS CONSULTAR LIBROS
 Route::get('libro/{id}/edit', [controladorBD::class, 'edit'])->name('libro.edit');
 
+Route::put('libro/{id}', [controladorBD::class, 'update'])->name('libro.update');
+
+Route::get('libro/{id}/eliminar2', [controladorBD::class, 'eliminar2'])->name('libro.eliminar2');
+
+Route::delete('libro/{id}', [controladorBD::class, 'destroy2'])->name('libro.destroy2');
+
 //RUTAS REGISTRAR AUTOR
 Route::get('autor/createA',[controladorBD::class, 'createA'])->name('autor.createA');
 

@@ -1,6 +1,30 @@
 @extends('template')
 @section('codigo')
-  
+
+@if (session()->has('actuali'))
+    {!!
+    " <script> Swal.fire({
+  position: 'top-center',
+  icon: 'success',
+  title: 'Libro actualizado',
+  showConfirmButton: false,
+  timer: 1500
+}) </script>"
+    !!}
+@endif
+
+@if (session()->has('borrado'))
+    {!!
+    " <script> Swal.fire({
+  position: 'top-center',
+  icon: 'info',
+  title: 'El libro fue eliminado de la Base de datos',
+  showConfirmButton: false,
+  timer: 1500
+}) </script>"
+    !!}
+@endif
+
 <h1 class="display mb-5 mt-4 text-center"> CONSULTAR LIBROS </h1>
     
 <div class="conteiner col-md-8 offset-md-2">
@@ -33,7 +57,7 @@
         <td>
           <a href="{{route('libro.edit',$consulta->idLibros)}}" class="btn btn-outline-success">Editar</a>
 
-          <a href="" class="btn btn-outline-danger">Eliminar</a>
+          <a href="{{route('libro.eliminar2',$consulta->idLibros)}}" class="btn btn-outline-danger">Eliminar</a>
         </td>
       </tr>
     </tbody>

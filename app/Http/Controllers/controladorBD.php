@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\validadorAutores;
 use App\Http\Requests\validadorLibreria;
 use App\Models\tb_autores;
+use App\Models\tb_libros;
 use Illuminate\Http\Request;
 use DB;
 use Carbon\Carbon;
@@ -95,7 +96,8 @@ class controladorBD extends Controller
     public function edit($id)
     {
         $consultaID = DB::table('tb_libros')->where('idLibros', $id)->first();
-        return view('editarLibro', compact('consultaID'));
+        $categorias = tb_autores::all();
+        return view('editarLibro', compact('consultaID', 'categorias'));
     }
 
     public function edit2($id){
@@ -104,9 +106,21 @@ class controladorBD extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(validadorLibreria $req, $id)
     {
-        
+        DB::table('tb_libros')->where('idLibros', $id)->update([
+
+            "titulo"=> $req->input('Titulo'),
+            "ISBN"=> $req->input('isbn'),
+            "paginas"=> $req->input('Paginas'),
+            "autor_id"=> $req->input('Autor'),
+            "editorial"=> $req->input('Edit'),
+            "email"=> $req->input('Email'),
+            "updated_at"=> Carbon::now(),
+
+        ]);
+
+        return redirect('consulLi')->with('actuali', 'bca');
     }
 
     public function update2(validadorAutores $req, $id)
@@ -135,5 +149,19 @@ class controladorBD extends Controller
         DB::table('tb_autores')->where('idAutores', $id)->delete();
 
         return redirect('consulAu')->with('eliminado', 'cba');
+    }
+
+    public function eliminar2($id)
+    {
+        $consultaEL2 = DB::table('tb_libros')->where('idLibros', $id)->first();
+
+        return view('eliminarLibro', compact('consultaEL2'));
+    }
+
+    public function destroy2($id)
+    {
+        DB::table('tb_libros')->where('idLibros', $id)->delete();
+
+        return redirect('consulLi')->with('borrado', 'cba');
     }
 }
