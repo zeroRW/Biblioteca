@@ -5,7 +5,7 @@
     
 <div class="conteiner col-md-8 offset-md-2">
 
-  <table class="table table-dark">
+  <table class="table table-dark text-center">
     <thead>
       <tr>
         <th scope="col">ID</th>
@@ -15,21 +15,35 @@
         <th scope="col">Autor</th>
         <th scope="col">Editorial</th>
         <th scope="col">Email</th>
+        <th scope="col">Opciones</th>
       </tr>
     </thead>
+
+    @foreach ($ConsultaRec as $consulta)
+
     <tbody>
       <tr>
+        <th scope="row">{{$consulta->idLibros}}</th>
+        <td>{{$consulta->titulo}}</td>
+        <td>{{$consulta->ISBN}}</td>
+        <td>{{$consulta->paginas}}</td>
+        <td>{{$consulta->autor_id}}</td>
+        <td>{{$consulta->editorial}}</td>
+        <td>{{$consulta->email}}</td>
+        <td>
+          <a href="{{route('libro.edit',$consulta->idLibros)}}" class="btn btn-outline-success">Editar</a>
 
-      </tr>
-      <tr>
-
-      </tr>
-      <tr>
-
+          <a href="" class="btn btn-outline-danger">Eliminar</a>
+        </td>
       </tr>
     </tbody>
+
+    @endforeach
+
   </table>
   
+  
+
 </div>
 
 @endsection

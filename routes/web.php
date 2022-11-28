@@ -33,6 +33,9 @@ Route::post('libro', [controladorBD::class, 'store'])->name('libro.store');
 
 Route::get('consulLi', [controladorBD::class, 'index'])->name('consuli.index');
 
+//RUTAS CONSULTAR LIBROS
+Route::get('libro/{id}/edit', [controladorBD::class, 'edit'])->name('libro.edit');
+
 //RUTAS REGISTRAR AUTOR
 Route::get('autor/createA',[controladorBD::class, 'createA'])->name('autor.createA');
 
@@ -40,4 +43,3 @@ Route::post('autor', [controladorBD::class, 'store2'])->name('autor.store2');
 
 Route::get('consulAu', [controladorBD::class, 'index2'])->name('consulau.index2');
 
-//RUTAS CONSULTAS

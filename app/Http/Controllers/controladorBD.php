@@ -14,13 +14,17 @@ class controladorBD extends Controller
 
     public function index()
     {
-        return view('consultarLibros');
+        $ConsultaRec = DB::table('tb_libros')->get();
+
+        return view('consultarLibros', compact('ConsultaRec'));
         
     }
 
     public function index2()
     {
-        return view('consultarAutores');
+        $ConsultaAA = DB::table('tb_autores')->get();
+
+        return view('consultarAutores', compact('ConsultaAA'));
     }
 
 
@@ -95,7 +99,8 @@ class controladorBD extends Controller
 
     public function edit($id)
     {
-        //
+        $consultaID = DB::table('tb_libros')->where('idLibros', $id)->first();
+        return view('editarLibro', compact('consultaID'));
     }
 
 
