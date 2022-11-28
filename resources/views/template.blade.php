@@ -28,7 +28,16 @@
                 <a class="nav-link" style="color: white" href="{{route('libro.create')}}">Registrar Libro</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" style="color: white" href="{{route('autor.createA')}}">Autores</a>
+                <a class="nav-link" style="color: white" href="{{route('autor.createA')}}">Registrar Autor</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" style="color: white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Consultas
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{{route('consuli.index')}}">Libros</a></li>
+                  <li><a class="dropdown-item" href="{{route('consulau.index2')}}">Autores</a></li>
+                </ul>
               </li>
             </ul>
                 <a href="/">

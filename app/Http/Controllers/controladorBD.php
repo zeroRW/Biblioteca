@@ -14,7 +14,13 @@ class controladorBD extends Controller
 
     public function index()
     {
-        //
+        return view('consultarLibros');
+        
+    }
+
+    public function index2()
+    {
+        return view('consultarAutores');
     }
 
 
@@ -76,6 +82,10 @@ class controladorBD extends Controller
 
     }
 
+    public function store3()
+    {
+        
+    }
 
     public function show($id)
     {

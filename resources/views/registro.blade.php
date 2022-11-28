@@ -63,7 +63,7 @@
                 <div class="mb-4">
                     <label for="text" class="form-label">Autor</label>
                     <select class="form-select" name="Autor" aria-label="Default select example">
-                        <option selected>Selecciona una opcion...</option>
+                        <option selected>Selecciona un autor...</option>
                         
                         @foreach ($categorias as $tb_autores)
                             <option value="{{$tb_autores['idAutores']}}">{{$tb_autores['nombre']}}</option>
