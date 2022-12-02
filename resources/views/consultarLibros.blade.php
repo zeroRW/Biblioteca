@@ -51,7 +51,7 @@
         <td>{{$consulta->titulo}}</td>
         <td>{{$consulta->ISBN}}</td>
         <td>{{$consulta->paginas}}</td>
-        <td>{{$consulta->autor_id}}</td>
+        <td>{{$consulta->nombre}}</td>
         <td>{{$consulta->editorial}}</td>
         <td>{{$consulta->email}}</td>
         <td>

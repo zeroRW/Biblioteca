@@ -7,7 +7,7 @@ use App\Http\Requests\validadorLibreria;
 use App\Models\tb_autores;
 use App\Models\tb_libros;
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 
 class controladorBD extends Controller
@@ -15,8 +15,17 @@ class controladorBD extends Controller
 
     public function index()
     {
-        $ConsultaRec = DB::table('tb_libros')->get();
 
+        $ConsultaRec = DB::table('tb_autores')
+        ->crossJoin('tb_libros')
+        ->select('tb_libros.idLibros', 'tb_Libros.titulo', 'tb_Libros.ISBN', 'tb_Libros.paginas', 'tb_autores.nombre', 'tb_Libros.editorial', 'tb_libros.email')
+        ->whereIn('tb_autores.idAutores',(function ($query) {
+            $query->from('tb_libros')
+                ->select('autor_id');
+        })
+        )->where('tb_autores.idAutores','=',DB::raw('tb_libros.autor_id'))
+        ->get();
+        
         return view('consultarLibros', compact('ConsultaRec'));
         
     }
